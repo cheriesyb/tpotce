@@ -34,6 +34,7 @@ RUN apk -U --no-cache add \
     /usr/share/logstash/bin/logstash-plugin install logstash-output-gelf && \
     /usr/share/logstash/bin/logstash-plugin install logstash-output-kusto && \
     /usr/share/logstash/bin/logstash-plugin install logstash-output-syslog && \
+    /usr/share/logstash/bin/logstash-plugin install microsoft-logstash-output-azure-loganalytics && \
 #
 # Add and move files
     cd /root/dist/ && \
