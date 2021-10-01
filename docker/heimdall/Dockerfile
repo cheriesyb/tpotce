@@ -40,6 +40,7 @@ RUN apk -U --no-cache add \
 #
 ## Add previously configured content
     mkdir -p /var/lib/nginx/html/storage/app/public/backgrounds/ && \
+    # Copy DGov background
     cp /root/dist/app/bg1.jpg /var/lib/nginx/html/public/img/bg1.jpg && \
     cp /root/dist/app/t-pot.png /var/lib/nginx/html/public/img/heimdall-icon-small.png && \
     cp /root/dist/app/app.sqlite /var/lib/nginx/html/database/app.sqlite && \
@@ -47,7 +48,10 @@ RUN apk -U --no-cache add \
     cp /root/dist/app/eshead.png /var/lib/nginx/html/storage/app/public/icons/77KqFv4YIshXUDLDoOvZ1NUbsKDtsMAjJvg4sYqN.png && \
     cp /root/dist/app/tsec.png /var/lib/nginx/html/storage/app/public/icons/RHwXCfCeGNDdhYgzlShL9o4NBFL2LHZWajgyeL0a.png && \
     cp /root/dist/app/spiderfoot.png /var/lib/nginx/html/storage/app/public/icons/s7uPe1frJqjv76oI6SNqNbWUsgU1GHYqRALMlwYb.png && \
+    # Copy DGov Kibana Icon
+    cp /root/dist/app/kibana.png /var/lib/nginx/html/storage/app/public/icons/kibana.png && \
     cp /root/dist/html/*.html /var/lib/nginx/html/public/ && \
+    # Copy DGov Website Logo
     cp /root/dist/html/favicon.ico /var/lib/nginx/html/public/favicon-16x16.png && \
     cp /root/dist/html/favicon.ico /var/lib/nginx/html/public/favicon-32x32.png && \
     cp /root/dist/html/favicon.ico /var/lib/nginx/html/public/favicon-96x96.png && \
