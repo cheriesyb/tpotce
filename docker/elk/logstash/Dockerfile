@@ -32,6 +32,7 @@ RUN apk -U --no-cache add \
     sed -i 's/! -x/! -e/g' /usr/share/logstash/bin/logstash.lib.sh && \
     /usr/share/logstash/bin/logstash-plugin install logstash-filter-translate && \
     /usr/share/logstash/bin/logstash-plugin install logstash-output-gelf && \
+    /usr/share/logstash/bin/logstash-plugin install logstash-output-kusto && \
     /usr/share/logstash/bin/logstash-plugin install logstash-output-syslog && \
 #
 # Add and move files
