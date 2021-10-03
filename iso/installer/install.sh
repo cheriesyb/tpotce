@@ -720,10 +720,6 @@ echo "$mySSHPORT" | tee -a /etc/ssh/sshd_config
 # Do not allow root login for cockpit
 sed -i '2i\auth requisite pam_succeed_if.so uid >= 1000' /etc/pam.d/cockpit
 
-# Rebuild Heimdall & Logstash
-docker-compose -f /opt/tpot/docker/heimdall/docker-compose.yml build
-docker-compose -f /opt/tpot/docker/elk/logstash/docker-compose.yml build
-
 # Let's make sure only myCONF_TPOT_FLAVOR images will be downloaded and started
 case $myCONF_TPOT_FLAVOR in
   STANDARD)
@@ -889,6 +885,10 @@ done
 # Let's create ews.ip before reboot and prevent race condition for first start
 fuBANNER "Update IP"
 /opt/tpot/bin/updateip.sh
+
+# Rebuild Heimdall & Logstash
+docker-compose -f /opt/tpot/docker/heimdall/docker-compose.yml build
+docker-compose -f /opt/tpot/docker/elk/logstash/docker-compose.yml build
 
 # Let's clean up apt
 fuBANNER "Clean up"
