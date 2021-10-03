@@ -721,8 +721,8 @@ echo "$mySSHPORT" | tee -a /etc/ssh/sshd_config
 sed -i '2i\auth requisite pam_succeed_if.so uid >= 1000' /etc/pam.d/cockpit
 
 # Rebuild Heimdall & Logstash
-sudo docker-compose -f /opt/tpot/docker/heimdall/docker-compose.yml build
-sudo docker-compose -f /opt/tpot/docker/elk/logstash/docker-compose.yml build
+docker-compose -f /opt/tpot/docker/heimdall/docker-compose.yml build
+docker-compose -f /opt/tpot/docker/elk/logstash/docker-compose.yml build
 
 # Let's make sure only myCONF_TPOT_FLAVOR images will be downloaded and started
 case $myCONF_TPOT_FLAVOR in
