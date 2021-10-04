@@ -543,9 +543,8 @@ services:
   logstash:
     container_name: logstash
     restart: always
-    environment:
+#    environment:
 #     - LS_JAVA_OPTS=-Xms2048m -Xmx2048m
-      - APP_KEY=Axun5u1P5Y9a6l-tq8U_3~z-pnFo3loLp~
     depends_on:
       elasticsearch:
         condition: service_healthy
