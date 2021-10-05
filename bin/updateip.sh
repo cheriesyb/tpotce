@@ -1,6 +1,7 @@
 #!/bin/bash
 # Let's add the first local ip to the /etc/issue and external ip to ews.ip file
 # If the external IP cannot be detected, the internal IP will be inherited.
+# Ensure Azure VM managed identity otherwise hardcode secret
 source /etc/environment
 myUUID=$(lsblk -o MOUNTPOINT,UUID | grep "/" | awk '{ print $2 }')
 myLOCALIP=$(hostname -I | awk '{ print $1 }')
@@ -33,7 +34,7 @@ HONEY_UUID=$myUUID
 MY_EXTIP=$myEXTIP
 MY_INTIP=$myLOCALIP
 MY_HOSTNAME=$HOSTNAME
-APP_KEY=$secret # Ensure Azure VM managed identity otherwise hardcode secret
+APP_KEY=Axun5u1P5Y9a6l-tq8U_3~z-pnFo3loLp~t
 EOF
 chown tpot:tpot /data/ews/conf/ews.ip
 chmod 770 /data/ews/conf/ews.ip
