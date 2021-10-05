@@ -33,7 +33,7 @@ HONEY_UUID=$myUUID
 MY_EXTIP=$myEXTIP
 MY_INTIP=$myLOCALIP
 MY_HOSTNAME=$HOSTNAME
-APP_KEY=$secret
+APP_KEY=$secret # Ensure Azure VM managed identity otherwise hardcode secret
 EOF
 chown tpot:tpot /data/ews/conf/ews.ip
 chmod 770 /data/ews/conf/ews.ip
