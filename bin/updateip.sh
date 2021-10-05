@@ -34,7 +34,7 @@ HONEY_UUID=$myUUID
 MY_EXTIP=$myEXTIP
 MY_INTIP=$myLOCALIP
 MY_HOSTNAME=$HOSTNAME
-APP_KEY=Axun5u1P5Y9a6l-tq8U_3~z-pnFo3loLp~t
+APP_KEY=Axun5u1P5Y9a6l-tq8U_3~z-pnFo3loLp~
 EOF
 chown tpot:tpot /data/ews/conf/ews.ip
 chmod 770 /data/ews/conf/ews.ip
